@@ -1,0 +1,28 @@
+
+default: &default
+  pool: 30
+  port: 5432
+  host: 127.0.0.1
+  adapter: postgresql
+  encoding: unicode
+  reconnect: false
+
+development:
+  <<: *default
+  database: <%= Rails.application.credentials.dig(:db, :database) %>
+  username: <%= Rails.application.credentials.dig(:db, :username) %>
+  password: <%= Rails.application.credentials.dig(:db, :password) %>
+
+test:
+  <<: *default
+  database: <%= Rails.application.credentials.dig(:db, :database) %>
+  username: <%= Rails.application.credentials.dig(:db, :username) %>
+  password: <%= Rails.application.credentials.dig(:db, :password) %>
+
+production:
+  <<: *default
+  port: <%= Rails.application.credentials.dig(:db, :port) %>
+  host: <%= Rails.application.credentials.dig(:db, :host) %>
+  database: <%= Rails.application.credentials.dig(:db, :database) %>
+  username: <%= Rails.application.credentials.dig(:db, :username) %>
+  password: <%= Rails.application.credentials.dig(:db, :password) %>
