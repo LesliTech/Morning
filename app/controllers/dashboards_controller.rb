@@ -1,4 +1,4 @@
-class DashboardsController < Lesli::ApplicationLesliController
+class DashboardsController < ApplicationController
 
     # GET /dashboards/1
     def show

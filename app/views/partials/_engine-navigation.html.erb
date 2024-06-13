@@ -1,4 +1,6 @@
-/*
+<%
+=begin
+
 Lesli
 
 Copyright (c) 2023, Lesli Technologies, S. A.
@@ -27,35 +29,12 @@ Building a better future, one line of code at a time.
 
 // · ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~     ~·~
 // · 
-*/
+=end
+%>
 
-
-// · Import Lesli builders
-import application from "Lesli/vue/application"
-import translation from "Lesli/vue/translation"
-
-
-// · Import engine translations
-import supportTranslations from "LesliSupport/vue/stores/translations.json"
-
-
-import applicationDashboard from "Root/vue/apps/dashboard/show.vue"
-import applicationCalendar from "Root/vue/apps/calendar/show.vue"
-import applicationSupport from "Root/vue/apps/support/show.vue"
-
-
-// · Build Lesli translations
-translation(supportTranslations)
-
-
-// · Build a new Lesli application
-application("Root", [{
-    path: "/dashboard",
-    component: applicationDashboard
-}, {
-    path: "/calendar",
-    component: applicationCalendar
-}, {
-    path: "/support",
-    component: applicationSupport
-}])
+<%= navigation_link(main_app.dashboard_path, "Dashboard", "ri-dashboard-3-line"); %>
+<%= navigation_link(main_app.calendar_path, "Calendar", "ri-calendar-2-line"); %>
+<%= navigation_link(main_app.support_path, "Support", "ri-customer-service-line"); %>
+<%= navigation_link("lesli_admin.dashboard_path", "Notes", "ri-booklet-line"); %>
+<%= navigation_link("lesli_admin.dashboard_path", "Messages", "ri-chat-2-line"); %>
+<%= navigation_link("lesli_admin.dashboard_path", "Notifications", "ri-notification-4-line"); %>

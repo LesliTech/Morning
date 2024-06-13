@@ -1,0 +1,65 @@
+
+@import "lesli-css";
+@import "LesliCalendar/scss/calendar";
+
+#lesli-application {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.morning-header {
+    margin: 6rem 0;
+    .icon {
+        float: right;
+        span {
+            font-size: 5rem;
+            color: lesli-css-color(blue);
+        }
+    }
+}
+
+
+nav.lesli-application-navigation {
+    border-bottom: none;
+    background-color: transparent;
+    //margin-bottom: 4rem;
+    ul {
+        justify-content: start;
+
+        a .text {
+            margin-left: 4px;
+        }
+    }
+}
+
+
+
+.widget {
+    background-color: white;
+    text-align: center;
+    padding: 1rem 1.4rem;
+    border-radius: 4px;
+    box-shadow: 
+        0px 0px 0px 1px #0E3F7E08,
+        0px 1px 1px -0.5px #2A334508,
+        0px 3px 3px -1.5px #2A334608,
+        0px 6px 6px -3px #2A334608,
+        0px 12px 12px -6px #0E3F7E08,
+        0px 24px 24px -12px #0E3F7E10;
+}
+
+
+
+.rotate {
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

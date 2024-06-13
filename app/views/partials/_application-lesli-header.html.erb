@@ -1,0 +1,38 @@
+<%#
+<header ref="lesliApplicationHeader" class="lesli-application-header">
+    <lesli-navbar>
+        <template v-slot:brand>
+            <%= customization_instance_logo_tag(logo: "app-logo") % >
+        </template>
+        <template v-slot:end>
+            <%= navigation_link("lesli_admin.dashboard_path", "Dashboard", "ri-dashboard-3-line"); % >
+            <%= navigation_link("lesli_admin.dashboard_path", "Calendar", "ri-calendar-2-line"); % >
+            <%= navigation_link("lesli_admin.dashboard_path", "Support", "ri-customer-service-line"); % >
+            <%= navigation_link("lesli_admin.dashboard_path", "Notes", "ri-booklet-line"); % >
+            <%= navigation_link("lesli_admin.dashboard_path", "Notifications", "ri-notification-4-line"); % >
+        </template>
+    </lesli-navbar>
+</header>
+%>
+
+<%
+hour = Time.now.hour
+welcome_text = if hour < 12
+    "Good morning"
+elsif hour < 18
+    "Good afternoon"
+else
+    "Good evening"
+end
+
+current_date = Time.zone.now.strftime("%A, %B %d")
+%>
+<header class="morning-header container is-flex is-justify-content-space-between is-align-items-center">
+    <div>
+        <h1 class="subtitle is-3 mb-0"><%= welcome_text %>, <%= current_user&.name %></h1>
+        <p class=""><%= current_date %>.</p>
+    </div>
+    <span class="icon">
+        <span class="ri-sun-line rotate"></span>
+    </span>
+</header>

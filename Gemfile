@@ -10,7 +10,10 @@ gem "rails", "~> 7.0.8"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+#gem "pg", "~> 1.1"
+
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "5.6.7"
@@ -20,12 +23,6 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-
-#gem "lesli"
-
-gem "lesli_shield"
-
-gem "lesli_security"
 
 group :development, :test do
     # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -39,6 +36,12 @@ group :development do
 
     # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
     # gem "spring"
-    gem "lesli", path: 'engines/Lesli'
-    #gem 'lesli_dev', path: 'enginesdev/LesliDev'
+
 end
+
+gem "lesli", path: '../LesliBuilder/engines/Lesli'
+gem "lesli_shield"
+gem "lesli_support", path: '../LesliBuilder/engines/LesliSupport'
+gem "lesli_security", path: 'engines/LesliSecurity'
+gem "lesli_calendar", path: '../LesliBuilder/engines/LesliCalendar'
+#gem 'lesli_dev', path: 'enginesdev/LesliDev'
