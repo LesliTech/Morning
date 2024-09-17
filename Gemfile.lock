@@ -15,7 +15,7 @@ PATH
   remote: ../LesliBuilder/engines/Lesli
   specs:
     lesli (5.0.12)
-      L2 (~> 0.6)
+      L2 (~> 0.6.5)
       acts_as_paranoid (~> 0.8.1)
       ancestry (~> 4.1.0)
       i18n-js (~> 4.2.3)
@@ -34,7 +34,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    L2 (0.6.3)
+    L2 (0.6.5)
     actioncable (7.0.8.4)
       actionpack (= 7.0.8.4)
       activesupport (= 7.0.8.4)
